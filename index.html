@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Percentage Increase Calculator</title>
+  <meta name="description" content="Calculate the percentage increase between two numbers with examples and explanations." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="container">
+    <h1>Percentage Increase Calculator</h1>
+
+    <p>
+      Use this percentage increase calculator to find how much a value has increased
+      from an original number to a new number.
+    </p>
+
+    <div class="calculator">
+      <label>
+        Original Value
+        <input type="number" id="originalValue" placeholder="e.g. 100" />
+      </label>
+
+      <label>
+        New Value
+        <input type="number" id="newValue" placeholder="e.g. 125" />
+      </label>
+
+      <button onclick="calculateIncrease()">Calculate</button>
+
+      <div id="result"></div>
+    </div>
+
+    <section class="examples">
+      <h2>Example</h2>
+      <p>
+        If the original value is 100 and the new value is 125, the increase is 25%.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
