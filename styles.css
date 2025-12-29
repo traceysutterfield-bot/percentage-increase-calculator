@@ -1,110 +1,47 @@
-:root {
-  --bg: #f6f7f9;
-  --card: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-}
-
-* { box-sizing: border-box; }
-
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-}
-
-.container {
-  max-width: 720px;
-  margin: 32px auto;
-  padding: 0 16px;
-}
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 40px auto;
   padding: 20px;
+  line-height: 1.6;
+}
+
+header, main, footer {
+  margin-bottom: 24px;
 }
 
 h1 {
-  font-size: 28px;
-  margin: 0 0 8px;
-  letter-spacing: -0.02em;
-}
-
-.lede {
-  margin: 0 0 18px;
-  color: var(--muted);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-@media (min-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  text-align: center;
+  margin-bottom: 12px;
 }
 
 label {
   display: block;
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.hint {
-  display: block;
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 6px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  padding: 10px;
+  margin-top: 6px;
   font-size: 16px;
-}
-
-.actions {
-  margin-top: 14px;
+  box-sizing: border-box;
 }
 
 button {
-  width: 100%;
-  padding: 12px;
-  border: 0;
-  border-radius: 10px;
-  font-weight: 700;
+  margin-top: 18px;
+  padding: 10px 18px;
   font-size: 16px;
-  background: #111827;
-  color: white;
   cursor: pointer;
 }
 
 .result {
-  margin-top: 16px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #fafafa;
-  font-weight: 700;
+  margin-top: 18px;
+  font-weight: bold;
 }
 
-.result.success {
-  background: rgba(16,185,129,0.08);
-}
-
-.result.error {
-  background: rgba(239,68,68,0.08);
+.back-link {
+  margin-top: 24px;
+  display: inline-block;
 }
