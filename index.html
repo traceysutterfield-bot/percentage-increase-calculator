@@ -68,14 +68,16 @@
       </ul>
     </section>
   </main>
+  
+<script>
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+</script>
 
   <footer>
     <p>© <span id="year"></span> Calculation Engine</p>
   </footer>
 
-  <script>
-    // Safe, tiny footer enhancement
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  
 </body>
 </html>
