@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Percent of a Number Calculator</title>
-  <meta name="description" content="Calculate any percent of a number instantly. Enter a percentage and a number to find the result quickly and accurately.">
+  <meta name="description" content="Calculate X% of Y instantly. Enter a percentage and a number to find the result with a clear formula and common use cases.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
 
@@ -26,7 +26,7 @@
         type="number"
         id="percentValue"
         inputmode="decimal"
-        placeholder="Enter percent"
+        placeholder="Enter percent (e.g., 20)"
       >
 
       <label for="numberValue">Number</label>
@@ -34,7 +34,7 @@
         type="number"
         id="numberValue"
         inputmode="decimal"
-        placeholder="Enter number"
+        placeholder="Enter number (e.g., 150)"
       >
 
       <button id="calcBtn" type="button">Calculate</button>
@@ -44,41 +44,51 @@
       <a class="back-link" href="/">← Back to Calculation Engine</a>
     </section>
 
-    <!-- SEO TEXT BLOCK (light v1, consistent with your other pages) -->
+    <!-- SEO TEXT BLOCK (MATCHING YOUR ESTABLISHED FORMAT) -->
     <section>
       <h2>What This Calculator Does</h2>
       <p>
-        This calculator finds the result of taking a percentage of a number (written as “X% of Y”).
-        It’s commonly used for discounts, tips, tax, commissions, and everyday percentage calculations.
+        This percent of a number calculator helps you find the value of a percentage applied to a number.
+        It answers questions written as “X% of Y” (for example, 15% of 80).
       </p>
       <p>
-        The formula is: <strong>(Percent ÷ 100) × Number</strong>.
-        Example: 20% of 150 = (20 ÷ 100) × 150 = 30.
+        It’s useful for everyday math like discounts, tips, tax, commissions, and splitting costs when you
+        need a quick and accurate percentage result.
       </p>
-    </section>
 
-    <section>
+      <h2>When Would You Use This Calculator?</h2>
+      <ul>
+        <li>Calculating a discount amount (like 25% off a price)</li>
+        <li>Finding a tip amount (like 18% of a restaurant bill)</li>
+        <li>Estimating tax or fees as a percent of a total</li>
+        <li>Calculating commission, profit margin portions, or allocations</li>
+        <li>Quickly checking percentage-based math without doing it by hand</li>
+      </ul>
+
       <h2>Common Questions This Calculator Can Answer</h2>
       <ul>
         <li>What is 20% of 150?</li>
-        <li>How do I calculate a percent of a number?</li>
         <li>What is 12.5% of 240?</li>
-        <li>How do I calculate discounts using percentages?</li>
-        <li>What is the percent-of-number formula?</li>
+        <li>How do I calculate a percent of a number?</li>
+        <li>How do I calculate the discount amount from a percentage?</li>
+        <li>What formula is used to calculate X% of Y?</li>
       </ul>
-    </section>
 
-    <section>
       <h2>Related Calculators</h2>
       <ul>
         <li><a href="/what-is-x-percent-of-y/">What Is X% of Y Calculator</a></li>
         <li><a href="/reverse-percentage-calculator/">Reverse Percentage Calculator</a></li>
         <li><a href="/percentage-difference-calculator/">Percentage Difference Calculator</a></li>
+        <li><a href="/percentage-change-calculator/">Percentage Change Calculator</a></li>
+        <li><a href="/percentage-increase-calculator/">Percentage Increase Calculator</a></li>
+        <li><a href="/percentage-decrease-calculator/">Percentage Decrease Calculator</a></li>
       </ul>
     </section>
   </main>
 
-  <!-- Inline script so this page works immediately (matches your single-page template style) -->
+  <script src="/script.js" defer></script>
+
+  <!-- Inline logic (works even if script.js doesn’t yet include this calculator) -->
   <script>
     (function () {
       const percentInput = document.getElementById("percentValue");
@@ -107,7 +117,6 @@
 
       calcBtn.addEventListener("click", calculate);
 
-      // Enter key calculates (same UX pattern as your other calculators should follow)
       [percentInput, numberInput].forEach((el) => {
         el.addEventListener("keydown", (e) => {
           if (e.key === "Enter") calculate();
