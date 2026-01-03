@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Percentage Difference Calculator</title>
+  <meta name="description" content="Calculate the percentage difference between two numbers. Compare values using the average-based percent difference formula.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Percentage Difference Calculator</h1>
+    <p>
+      Compare two values using percentage difference (based on their average).
+    </p>
+  </header>
+
+  <main>
+    <!-- CALCULATOR UI -->
+    <section>
+      <label for="valueA">First Value</label>
+      <input
+        type="number"
+        id="valueA"
+        inputmode="decimal"
+        placeholder="Enter first value"
+      >
+
+      <label for="valueB">Second Value</label>
+      <input
+        type="number"
+        id="valueB"
+        inputmode="decimal"
+        placeholder="Enter second value"
+      >
+
+      <button id="calcBtn" type="button">Calculate</button>
+
+      <div class="result" id="result" aria-live="polite"></div>
+
+      <a class="back-link" href="/">← Back to Calculation Engine</a>
+    </section>
+
+    <!-- SEO TEXT BLOCK (STANDARDIZED FORMAT) -->
+    <section>
+      <h2>What This Calculator Does</h2>
+      <p>
+        This percentage difference calculator compares two numbers by measuring the difference
+        between them relative to their average.
+      </p>
+      <p>
+        Unlike percentage change, this calculation does not assume one value is the “original.”
+        It’s commonly used when comparing values side by side.
+      </p>
+
+      <h2>When Would You Use This Calculator?</h2>
+      <ul>
+        <li>Comparing two measurements or values with no clear starting point</li>
+        <li>Analyzing differences in scientific or statistical data</li>
+        <li>Comparing prices, metrics, or performance values</li>
+        <li>Understanding how far apart two numbers are in percentage terms</li>
+        <li>Avoiding bias when neither value is the baseline</li>
+      </ul>
+
+      <h2>Common Questions This Calculator Can Answer</h2>
+      <ul>
+        <li>What is the percentage difference between 50 and 75?</li>
+        <li>How do I calculate percentage difference?</li>
+        <li>What is the difference between percent change and percent difference?</li>
+        <li>How far apart are two numbers in percentage terms?</li>
+        <li>What formula is used for percentage difference?</li>
+      </ul>
+
+      <h2>Related Calculators</h2>
+      <ul>
+        <li><a href="/percentage-change-calculator/">Percentage Change Calculator</a></li>
+        <li><a href="/percentage-increase-calculator/">Percentage Increase Calculator</a></li>
+        <li><a href="/percentage-decrease-calculator/">Percentage Decrease Calculator</a></li>
+        <li><a href="/percent-of-number/">Percent of a Number Calculator</a></li>
+        <li><a href="/what-is-x-percent-of-y/">What Is X% of Y Calculator</a></li>
+        <li><a href="/reverse-percentage-calculator/">Reverse Percentage Calculator</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="/script.js" defer></script>
+
+  <!-- Inline logic -->
+  <script>
+    (function () {
+      const aInput = document.getElementById("valueA");
+      const bInput = document.getElementById("valueB");
+      const calcBtn = document.getElementById("calcBtn");
+      const resultEl = document.getElementById("result");
+
+      function fmt(n) {
+        if (!isFinite(n)) return "";
+        return Number(n).toFixed(10).replace(/\.?0+$/, "");
+      }
+
+      function calculate() {
+        const a = Number(aInput.value);
+        const b = Number(bInput.value);
+
+        if (!isFinite(a) || !isFinite(b)) {
+          resultEl.textContent = "Please enter valid numbers in both fields.";
+          return;
+        }
+
+        const avg = (a + b) / 2;
+
+        if (avg === 0) {
+          resultEl.textContent = "Percentage difference is undefined when both values average to zero.";
+          return;
+        }
+
+        const diff = Math.abs(a - b);
+        const percentDiff = (diff / avg) * 100;
+
+        resultEl.innerHTML =
+          `The percentage difference between <strong>${fmt(a)}</strong> and <strong>${fmt(b)}</strong> is ` +
+          `<strong>${fmt(percentDiff)}%</strong>.`;
+      }
+
+      calcBtn.addEventListener("click", calculate);
+
+      [aInput, bInput].forEach((el) => {
+        el.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") calculate();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
